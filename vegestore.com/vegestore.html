@@ -1,0 +1,100 @@
+<html>
+<head>
+    <title>vegestore.com</title>
+<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+
+
+<body>
+    
+    <div class="headcontainer">
+        <div class="titlev">
+            <img src="logo.png" height="60px" width="60px"><span> VeGeStore</span>
+        </div>
+        <div class="menuBar"> <div class="menu 1">about us</div><div  class="menu 2"> Standard Products</div><div  class="menu 3"> your Product</div><div  class="menu 4"> contact us</div></div>
+    </div>
+    <div class="content">
+        <div class="form"> 
+        <form id="myform">
+            <label>veg Name</label><input id="name" placeholder="enter the name" type="text">
+            <label>price</label><input id="cash"placeholder="amount" type="text">
+            <label>Owner</label><input id="owner"placeholder="who" type="text"><br>
+            <button type="submit" id="btnclicked"> Save</button>
+        </form>
+        
+        
+        </div>
+        <div id="popup">:) The record is saved </div>
+        <div class="main">
+            
+           
+            <ul class="listcontainer">
+                <li class="listing"><h1> Potato vegetable </h1> <button class="delete"> delete</button> <h3 style="color:red ;">1kg=20rs</h3><p>Product delivery by this company</P> </li>
+                <li class="listing"><h1> onion vegetable</h1>  <button class="delete"> delete</button> <h3 style="color:red ;">1kg=20rs</h3><p>Product delivery by this company</P></li>
+                <li class="listing"><h1> tomato vegetable</h1>  <button class="delete"> delete</button> <h3 style="color:red ;">1kg=20rs</h3><p>Product delivery by this company</P></li>
+                <li class="listing"><h1> ginger vegetable</h1>  <button class="delete"> delete</button> <h3 style="color:red ;">1kg=20rs</h3><p>Product delivery by this company</P></li>
+                <li class="listing"><h1> gralic vegetable</h1>  <button class="delete"> delete</button> <h3 style="color:red ;">1kg=20rs</h3><p>Product delivery by this company</P></li>
+                  
+            </ul>
+        </div>
+
+    </div>
+    <script>
+           document.addEventListener('DOMContentLoaded',()=>{ 
+            var list = document.querySelector('.main ul');
+            var forms = document.forms;
+            list.addEventListener('click',(e)=>{
+                if(e.target.className =='delete'){
+                    const li = e.target.parentElement;
+                    li.parentNode.removeChild(li); 
+                }
+            });
+            var addforms = forms['myform'];
+            addforms.addEventListener('submit',(e)=>{
+                e.preventDefault();
+               var name = document.getElementById("name").value;
+               var cash = document.getElementById("cash").value;
+               var owner = document.getElementById("owner").value;
+                var list1 = document.createElement('li');
+                var head1 = document.createElement('h1');
+                var button2 = document.createElement('button');
+                var head2 = document.createElement('h3');
+                var para = document.createElement('p');
+
+                head1.textContent=name;
+                head2.textContent=cash;
+                para.textContent=owner;
+                button2.textContent="delete";
+                
+                button2.classList.add('delete');
+
+
+                list1.appendChild(head1);
+                list1.appendChild(button2);
+                list1.appendChild(head2);
+                head2.setAttribute('style','color:red')
+                list1.appendChild(para);
+                list.appendChild(list1);
+                document.getElementById('popup').style.display='block';
+             
+             
+
+                
+                
+
+
+            })
+         
+
+
+           })
+        
+
+        
+    </script>
+</body>
+</html>
