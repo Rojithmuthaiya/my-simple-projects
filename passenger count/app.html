@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+    .page1{
+        margin:auto;
+        text-align: center;
+        border: none;
+        border-radius: 20px;
+        box-shadow: 4px 4px 4px 4px cornflowerblue;
+        height: 500px;
+        width: 500px;
+        background-image: url("Penguins.jpg");
+        background-blend-mode: darken;        
+        color: rgb(255, 254, 254);
+    }
+
+    h1{
+        margin-top: 20px;
+        margin-bottom: 10px;
+        font-size: 50px;
+        
+    }
+    h2{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 60px;
+    }
+    button{
+        color: aliceblue;
+        height: 40px;
+        width: 70px;
+        padding: 5px;
+        margin: 10px;
+        border: none;
+        border-radius: 5px;
+    }
+    #increment1{
+        
+        background-color: green;
+    }
+    #decrement1{
+        
+        background-color: brown;
+    }
+    button:hover{
+        color: black;
+        box-shadow: 5px 5px 5px gray;
+    }
+    #entires{
+        font-size: 20px;
+        color: rgb(13, 13, 13);
+
+    }
+    #savee{
+        background-color: rgb(34, 34, 247);
+    }
+    </style>
+    <title>pasenger counter app</title>
+</head>
+
+
+<body>
+    <div class="page1">
+        <h1>People entered</h1>
+        <h2 id="counts">0</h2>
+        
+        <button id="increment1" onclick="incfun()">increment</button><button id="decrement1" onclick="dfunc()">decrement</button><button id="savee" onclick="save1()">save</button>
+        <p id="entires"> Previous Entires:</p> 
+    </div>
+
+     <script>
+        var i_count= 0;
+        
+        num=document.getElementById("counts");
+        var sav = document.getElementById("entires");
+        
+       function incfun(){
+        i_count = i_count + 1
+        num.innerText=i_count;
+       }
+       function dfunc(){
+        i_count=i_count-1;
+        num.innerText=i_count;
+       }
+       function save1(){
+        sav1 = "-"+i_count;
+        sav.innerText +=sav1;
+        i_count=0;
+        num.innerText=0;
+
+       }     </script>
+    
+</body>
+</html>

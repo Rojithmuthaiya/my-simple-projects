@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<style>
+    
+    
+    input{
+        width: 100%;
+        height:20px ;
+        padding: 10px;
+
+    }
+    input:hover{
+        border-color: orange;
+    }
+    button{
+        color: white;
+        height: 20px;
+        width: 100px;
+        background-color: orange;
+        margin: 5px;
+        border: none;
+
+        
+    }
+</style>
+<body>
+
+        <input type="text" id="text"><br>
+        <button id="btnsave">SAVE INPUT</button>
+        <ul id="ulol"></ul>
+        <script>
+        let links = [];
+        const intext = document.getElementById("text");
+        const savBtn = document.getElementById("btnsave");
+        const oderli = document.getElementById("ulol")
+   
+        
+        savBtn.addEventListener("click",function() {
+            links.push(intext.value)
+            render();
+            intext.value=null;
+          
+        })
+        function render(){
+            let listItems=""
+            for(i=0; i< links.length; i++){
+                listItems += `
+                <li>
+                    <a target='_blank' href='${links[i]}'>${links[i]}</a></li>`;
+            }
+            oderli.innerHTML= listItems
+        }
+       
+     
+    </script>
+
+</body>
+</html>
